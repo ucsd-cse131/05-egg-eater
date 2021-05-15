@@ -1,7 +1,7 @@
 ######################################################
 ORG=ucsd-cse131
-ASGN=04
-COMPILER=egg
+ASGN=05
+COMPILER=egg-eater
 EXT=egg
 BUILD_OPTS=--ghc-options -O0 
 RUNTIME=c-bits
