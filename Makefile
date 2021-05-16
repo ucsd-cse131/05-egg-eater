@@ -67,7 +67,7 @@ tests/output/%.run: tests/output/%.o $(RUNTIME)/main.c
 	clang $(WINSTUFF) -g -m64 -o $@ $(RUNTIME)/main.c $<
 
 tests/output/%.o: tests/output/%.s
-	nasm -F dwarf -g -f $(FORMAT) -o $@ $<
+	nasm -f $(FORMAT) -o $@ $<
 
 tests/output/%.s: tests/input/%.$(EXT)
 	$(COMPILEREXEC) $< > $@
