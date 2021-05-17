@@ -75,10 +75,10 @@ data Reg
   | RBP
   | RDI
   | RSI
-  | RDX 
+  | RDX
   | RCX
   | R8
-  | R9 
+  | R9
   | R14
   | R15
   deriving (Show)
@@ -316,7 +316,7 @@ instance PPrint (Expr a) where
   pprint e@(Let {})      = printf "(let %s in %s)"       (ppBinds bs) (pprint b) where (bs, b) = exprBinds e
   pprint (App f es _)    = printf "%s(%s)"               f            (pprintMany es)
   pprint (Tuple es _)    = printf "(%s)"                 (pprintMany es)
-  pprint (GetItem e i _) = printf "%s[%s]"               (pprint e)   (pprint i)
+  pprint (GetItem e i _) = printf "(%s)[%s]"             (pprint e)   (pprint i)
 
 instance PPrint (Decl a) where
   pprint (Decl f xs e _) = printf "def %s(%s):\n%s" (pprint f) (pprintMany xs) body
@@ -417,9 +417,9 @@ isAnf (Prim1 _ e _)    = isImm e
 isAnf (Prim2 _ e e' _) = isImm e && isImm e'
 isAnf (If c t e _)     = isImm c && isAnf t && isAnf e
 isAnf (Let _ e e' _)   = isAnf e && isAnf e'
-isAnf (Tuple es _)     = all isAnf es
-isAnf (GetItem e i _)  = isAnf e && isAnf i
-isAnf (App _ es _)     = all isAnf es
+isAnf (Tuple es _)     = all isImm es
+isAnf (GetItem e i _)  = isImm e && isImm i
+isAnf (App _ es _)     = all isImm es
 
 {-@ measure isImm @-}
 isImm :: Expr a -> Bool

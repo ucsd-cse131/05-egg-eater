@@ -1,9 +1,9 @@
 ######################################################
 ORG=ucsd-cse131
 ASGN=05
-COMPILER=egg-eater
+COMPILER=egg
 EXT=egg
-BUILD_OPTS=--ghc-options -O0 
+BUILD_OPTS=--ghc-options -O0
 RUNTIME=c-bits
 ######################################################
 REPL=stack repl --allow-different-user
@@ -55,7 +55,7 @@ turnin:
 	git push origin main
 
 upstream:
-	git remote add upstream https://github.com/$(ORG)/$(ASGN)-$(COMPILER).git
+	git remote add upstream https://github.com/$(ORG)/$(ASGN)-egg-eater.git
 
 update:
 	git pull upstream main --allow-unrelated-histories
