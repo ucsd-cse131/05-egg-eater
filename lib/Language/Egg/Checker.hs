@@ -99,7 +99,7 @@ largeNumberErrors n l
   = condError (maxInt < abs n) (errLargeNum l n)
 
 maxInt :: Integer
-maxInt = 1073741824
+maxInt = 4611686018427387903
 
 unboundVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 unboundVarErrors vEnv x l

@@ -3,7 +3,7 @@ ORG=ucsd-cse131
 ASGN=05
 COMPILER=egg
 EXT=egg
-BUILD_OPTS=--ghc-options -O0 
+BUILD_OPTS=--ghc-options -O0
 RUNTIME=c-bits
 ######################################################
 REPL=stack repl --allow-different-user
