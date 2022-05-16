@@ -15,7 +15,7 @@ an egg, as long as you don't think about it too much.
 
 1. Use the _link_ from the github classroom to create your private clone of the starter code.
 
-2. Do `git clone https://github.com/ucsd-cse131/ucsd-cse131-sp21-05-egg-eater-XYZ` where `XYZ` is your username.
+2. Do `git clone https://github.com/ucsd-cse131/ucsd-cse131-sp22-05-egg-eater-XYZ` where `XYZ` is your username.
 
 3. Link your clone to the "upstream" to get any updates
 
@@ -369,16 +369,6 @@ it with your own implementation, if you prefer.
 * You **must** add 5 new tests in `yourTests.json` in order
   to get **base credit**. Feel free to add more, we'll
   just take the first 5.
-
-* The creators of the **5 hardest tests** get **5%**
-  of total points as **extra credit**
-
-* A test's "score" is the total number of compilers
-  submitted by the entire class on which the test
-  produces the **wrong** output.
-
-* That is, the **harder** a test, the **higher** 
-  its score.
 
 ## Interactive REPL
 
